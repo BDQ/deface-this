@@ -1,0 +1,64 @@
+<div class="block">
+  <div class="content">
+    <div class="inner">
+      <h2 class="title">Welcome</h2>
+      <em>Deface</em> is a Rails 3 plugin for customizing ERB views without editing the underlying template file. Designed for use with Rails applications that support extensions (like Spree, Redmine, Radiant, etc).
+    </div>
+  </div>
+</div>
+<form class="form" method="get" action="#">
+  <div class="block">
+
+    <div class="content">
+      <h2 class="title">Original & Replacement</h2>
+      <div class="inner">
+        <div class="group">
+          <label class="label">Original</label>
+          <textarea id="original" cols="40" rows="10" class="text_area"></textarea>
+          <span class="description">ERB Markup</span>
+        </div>
+        <div class="group">
+          <label class="label">Escaped Source</label>
+          <div id="escaped"></div>
+          <span class="description">Escaped Markup (automatically generated)</span>
+        </div>
+        <div class="group">
+          <span id="match_count">(0)</span>
+          <label class="label">Selector</label>
+          <input id="selector" class="text_field">
+          <span class="description">Ex: "div.products", "ul li:last", "p#comment_22"</span>
+        </div>
+        <div class="group">
+          <label class="label">Action</label>
+          <select id="action">
+            <option value="replace">Replace</option>
+            <option value="remove">Remove</option>
+            <option value="insert_before">Insert Before</option>
+            <option value="insert_after">Insert After</option>
+          </select><br />
+          <span class="description">Action to be performed.</span>
+        </div>
+        <div class="group">
+          <label class="label">Source</label>
+          <textarea id="source" cols="40" rows="6" class="text_area"></textarea>
+          <span class="description">ERB Markup to be added</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="block" style="margin-right:0px;">
+
+    <div class="content">
+      <h2 class="title">Result</h2>
+      <div class="inner">
+        <div class="Result">
+          <label class="label">Final Markup</label>
+          <div id="result"></div>
+          <span class="description">Final Result (automatically generated)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

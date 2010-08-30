@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Deface: The ERB View Customizer</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+  <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="deface.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <img src="defacer.png" alt="defacer" />
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div id="msg">Something went right, please try again!</div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
