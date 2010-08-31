@@ -12,10 +12,11 @@ end
 post '/deface' do
   html_highlighter = CodeRay::Duo[:html, :div]
   ruby_highlighter = CodeRay::Duo[:rhtml, :div]
-  escaped = Deface::Parser::ERB.compile(params["original"])
+
+  escaped = Deface::Parser.erb_markup!(params["original"])
   doc = Nokogiri::HTML::DocumentFragment.parse(escaped)
 
-  result = {:escaped => html_highlighter.encode(doc.to_s) }
+  result = {:escaped => html_highlighter.encode(escaped) }
 
   unless params["selector"].blank?
     begin
@@ -27,7 +28,7 @@ post '/deface' do
     end
   end
 
-  if !params["action"].blank? && !params["source"].blank? && matches.count > 0
+  if !params["action"].blank? && (!params["source"].blank? || params["action"] == "remove") && matches.count > 0
     matches.each do |match|
       replacement = case params["action"].to_sym
         when :remove
@@ -44,7 +45,7 @@ post '/deface' do
 
     end
 
-    result[:result] = ruby_highlighter.encode(Deface::Parser.undo_erb_markup(doc.to_s))
+    result[:result] = ruby_highlighter.encode(Deface::Parser.undo_erb_markup!(doc.to_s))
 
   end
 

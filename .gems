@@ -1,4 +1,4 @@
 sinatra -v 1.0
 coderay -v 0.9.3
 json -v 1.4.6
-deface -v 0.1.0
+deface -v 0.2.0

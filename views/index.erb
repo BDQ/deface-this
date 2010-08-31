@@ -6,6 +6,16 @@
     </div>
   </div>
 </div>
+
+<div class="block" style="margin-right:0px;">
+  <div class="content">
+    <div class="inner">
+      <br/>
+      Source is available on <a href="http://github.com/BDQ/Deface">Github</a>, patches, bugs and suggestions welcome.<br/>&nbsp;
+    </div>
+  </div>
+</div>
+
 <form class="form" method="get" action="#">
   <div class="block">
 
@@ -15,7 +25,7 @@
         <div class="group">
           <label class="label">Original</label>
           <textarea id="original" cols="40" rows="10" class="text_area"></textarea>
-          <span class="description">ERB Markup</span>
+          <span class="description">ERB Markup (paste view code here)</span>
         </div>
         <div class="group">
           <label class="label">Escaped Source</label>
@@ -23,7 +33,7 @@
           <span class="description">Escaped Markup (automatically generated)</span>
         </div>
         <div class="group">
-          <span id="match_count">(0)</span>
+          <span id="match_count">Matches: (0)</span>
           <label class="label">Selector</label>
           <input id="selector" class="text_field">
           <span class="description">Ex: "div.products", "ul li:last", "p#comment_22"</span>
@@ -39,9 +49,9 @@
           <span class="description">Action to be performed.</span>
         </div>
         <div class="group">
-          <label class="label">Source</label>
+          <label class="label">Replacement</label>
           <textarea id="source" cols="40" rows="6" class="text_area"></textarea>
-          <span class="description">ERB Markup to be added</span>
+          <span class="description">ERB to be inserted / used as replacement</span>
         </div>
       </div>
 

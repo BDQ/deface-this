@@ -10,16 +10,20 @@ function deface(){
     data: "original=" + original + "&selector=" + selector + "&action=" + action + "&source=" + source,
     url: "/deface",
     success: function(res){
-      var result = JSON.parse(res);
+      if(res==""){
+       $('#msg').show();
+      }else{
+        var result = JSON.parse(res);
 
-      $('#escaped').html(result.escaped);
+        $('#escaped').html(result.escaped);
 
-      if(result.count!=undefined){
-        $('#match_count').html("(" + result.count + ")");
-      }
+        if(result.count!=undefined){
+          $('#match_count').html("Matches (" + result.count + ")");
+        }
 
-      if(result.result!=undefined){
-        $('#result').html(result.result);
+        if(result.result!=undefined){
+          $('#result').html(result.result);
+        }
       }
     }
   });
