@@ -39,6 +39,12 @@ post '/deface' do
           params["source"].clone << match.to_s
         when :insert_after
           match.to_s << params["source"].clone
+        when :insert_top
+          match.children.before(params["source"].clone)
+          match.to_s
+        when :insert_bottom
+          match.children.after(params["source"].clone)
+          match.to_s
       end
 
       match.replace Deface::Parser.convert replacement
