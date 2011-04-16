@@ -41,7 +41,7 @@ post '/deface' do
           match.to_s << params["source"].clone
       end
 
-      match.replace Deface::Parser.convert_fragment replacement
+      match.replace Deface::Parser.convert replacement
 
     end
 
