@@ -4,7 +4,6 @@ require 'erb'
 require 'deface'
 require 'coderay'
 require 'json'
-require 'ruby-debug'
 
 get '/' do
   erb :index
