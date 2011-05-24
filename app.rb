@@ -6,7 +6,6 @@ require 'deface'
 require 'coderay'
 require 'json'
 require 'nokogiri'
-#require 'ruby-debug'
 
 get '/' do
   erb :index
@@ -17,7 +16,7 @@ post '/deface' do
   ruby_highlighter = CodeRay::Duo[:rhtml, :div]
 
   escaped = Deface::Parser.erb_markup!(params["original"].clone)
-  #doc = Nokogiri::HTML::DocumentFragment.parse()
+  doc = Nokogiri::HTML::DocumentFragment.parse(escaped)
 
   result = {:escaped => html_highlighter.encode(escaped) }
 
