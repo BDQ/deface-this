@@ -23,6 +23,10 @@
       <h2 class="title">Original & Replacement</h2>
       <div class="inner">
         <div class="group">
+          <div class="options">
+            <input type="radio" value="erb" name="original_type" checked>ERB
+            <input type="radio" value="haml" name="original_type">HAML
+          </div>
           <label class="label">Original</label>
           <textarea id="original" cols="40" rows="10" class="text_area"></textarea>
           <span class="description">ERB Markup (paste view code here)</span>
@@ -33,27 +37,41 @@
           <span class="description">Escaped Markup (automatically generated)</span>
         </div>
         <div class="group">
-          <span id="match_count">Matches: (0)</span>
+          <span id="match_count" class="match_count">Matches: (0)</span>
           <label class="label">Selector</label>
           <input id="selector" class="text_field">
           <span class="description">Ex: "div.products", "ul li:last", "p#comment_22"</span>
         </div>
         <div class="group">
+          <span id="closing_match_count" class="match_count">Matches: (0)</span>
+          <label class="label">Closing Selector</label>
+          <input id="closing_selector" class="text_field">
+          <span class="description">Ex: "div.products", "ul li:last", "p#comment_22"</span>
+        </div>
+        <div class="group">
           <label class="label">Action</label>
           <select id="action">
-            <option value="replace">Replace</option>
             <option value="remove">Remove</option>
+            <option value="replace">Replace</option>
+            <option value="replace_contents">Replace Contents</option>
             <option value="insert_before">Insert Before</option>
             <option value="insert_after">Insert After</option>
             <option value="insert_top">Insert Top</option>
             <option value="insert_bottom">Insert Bottom</option>
+            <option value="surround">Surround</option>
+            <option value="surround_contents">Surround Contents</option>
+            <option value="set_attributes">Set Attributes</option>
           </select><br />
           <span class="description">Action to be performed.</span>
         </div>
         <div class="group">
+          <div class="options">
+            <input type="radio" value="erb" name="replacement_type" checked>ERB
+            <input type="radio" value="haml" name="replacement_type">HAML
+          </div>
           <label class="label">Replacement</label>
           <textarea id="source" cols="40" rows="6" class="text_area"></textarea>
-          <span class="description">ERB to be inserted / used as replacement</span>
+          <span class="description">ERB /HAML to be used as replacement.<br>When using <strong>:set_attributes</strong> contents should be hash, Ex: <strong>{:attr => 'value'}</strong></span>
         </div>
       </div>
 

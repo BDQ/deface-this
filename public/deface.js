@@ -1,13 +1,17 @@
 function deface(){
   $('#msg').hide();
   var original = escape($('#original').val());
+  var original_format = $("[name='original_type']:checked").val();
+
   var selector = escape($('#selector').val());
+  var closing_selector = escape($('#closing_selector').val());
   var action = $('#action').val();
   var source = escape($('#source').val());
+  var replacement_format = $("[name='replacement_type']:checked").val();
 
   $.ajax({
     type: "POST",
-    data: "original=" + original + "&selector=" + selector + "&action=" + action + "&source=" + source,
+    data: "original=" + original + "&original_format=" + original_format + "&selector=" + selector + "&closing_selector=" + closing_selector + "&action=" + action + "&source=" + source + "&replacement_format=" + replacement_format ,
     url: "/deface",
     success: function(res){
       if(res==""){
@@ -19,6 +23,10 @@ function deface(){
 
         if(result.count!=undefined){
           $('#match_count').html("Matches (" + result.count + ")");
+        }
+
+        if(result.closing_count!=undefined){
+          $('#closing_match_count').html("Matches (" + result.closing_count + ")");
         }
 
         if(result.result!=undefined){
@@ -38,15 +46,17 @@ var delay = (function(){
 })();
 
 $(function() {
-  $('#original, #selector, #action, #source').change( function(){ deface() } );
-  $('#original, #selector, #action, #source').keyup( function(){
+  $("#original, #selector, #closing_selector, #action, #source, [name='original_type'], [name='replacement_type']").change( function(){ deface() } );
+  $('#original, #selector, #closing_selector, #action, #source').keyup( function(){
     delay(function(){
       deface();
     },500 );
   });
 
   $('#msg').ajaxError(function(e, xhr, settings, exception) {
-      $(this).show();
+    $(this).show();
+    $('#match_count').html("Matches (ERROR)");
+    $('#closing_match_count').html("Matches (ERROR)");
   });
 
 });

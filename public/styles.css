@@ -788,7 +788,7 @@ ul.list li .item .avatar {
  overflow: scroll;
 }
 
-#match_count{
+.match_count{
   float: right;
   color: #666666;
   font-weight: bold;
@@ -800,4 +800,11 @@ ul.list li .item .avatar {
   font-weight: bold;
   padding: 0 0 20px;
   display: none;
+}
+
+.options{
+  float: right;
+}
+.options input{
+  margin-right: 4px;
 }
