@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/railsdog/deface.git
-  revision: 816b5b9916eae1d16f1ceca8fc4f4a0359763027
+  revision: f405217afa99f9ca777944afb34a195662684d7a
   branch: haml
   specs:
     deface (0.7.2)
@@ -37,21 +37,21 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    arel (3.0.0)
+    arel (3.0.2)
     builder (3.0.0)
     coderay (0.9.3)
     erubis (2.7.0)
     haml (3.1.4)
     hike (1.2.1)
     i18n (0.6.0)
-    journey (1.0.1)
+    journey (1.0.3)
     json (1.4.6)
     mail (2.4.1)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    multi_json (1.0.4)
+    multi_json (1.1.0)
     nokogiri (1.5.0)
     polyglot (0.3.3)
     rack (1.4.1)
