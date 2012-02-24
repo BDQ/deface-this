@@ -18,6 +18,7 @@ Rails.application.stub :config => mock('config')
 Rails.application.config.stub :cache_classes => true
 Rails.application.config.stub :deface => ActiveSupport::OrderedOptions.new
 Rails.application.config.stub :deface => Deface::Environment.new
+Rails.stub(:logger)
 
 get '/' do
   erb :index
