@@ -19,6 +19,8 @@ Rails.application.config.stub :cache_classes => true
 Rails.application.config.stub :deface => ActiveSupport::OrderedOptions.new
 Rails.application.config.stub :deface => Deface::Environment.new
 Rails.stub(:logger)
+Rails.logger.stub(:info)
+Rails.logger.stub(:error)
 
 get '/' do
   erb :index
