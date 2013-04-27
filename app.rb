@@ -1,10 +1,10 @@
-#bundle exec ruby app.rb 
+# bundle exec ruby app.rb
 require 'bundler/setup'
 require 'sinatra'
 require 'erb'
 require 'haml'
 require 'deface'
-require 'deface/haml_converter' #is conditionally loaded by deface
+require 'deface/haml_converter' # is conditionally loaded by deface
 require 'coderay'
 require 'json'
 require 'nokogiri'
@@ -99,7 +99,7 @@ post '/deface' do
       source.gsub!(/\A\{/, '')
       source.gsub!(/\}\z/, '')
 
-      source.split(',').each do |entry| 
+      source.split(',').each do |entry|
         entryMap=entry.split(/=>/)
 
         value = entryMap[1].strip
