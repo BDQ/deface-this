@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra', '1.3.2'
 gem 'coderay', '0.9.3'
-gem 'json', '1.4.6'
+gem 'json', '1.5.5'
 gem 'haml', '~> 4.0.2'
 gem 'deface', '~> 0.9.1'
 gem 'nokogiri', '1.5.0'
